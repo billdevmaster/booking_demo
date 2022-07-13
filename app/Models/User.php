@@ -40,7 +40,7 @@ class User extends Authenticatable
   
             $user = Auth::user();
   
-            if ($user->role == 'A') {
+            if ($user->role == 'A' || $user->role == 'SA') {
     
                 return true;
     
