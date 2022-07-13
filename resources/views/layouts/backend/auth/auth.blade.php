@@ -34,7 +34,7 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backendassets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
 </head>

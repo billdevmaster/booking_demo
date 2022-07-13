@@ -38,7 +38,7 @@
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backendassets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('icon.css')}}">
     <!-- END: Custom CSS-->
 
@@ -178,7 +178,7 @@
 
     <!-- BEGIN: Page JS-->
     @yield('page_js')
-    <script src="{{asset('public/assets/backendassets/js/scripts.js')}}"></script>
+    <script src="{{asset('public/assets/backend/assets/js/scripts.js')}}"></script>
 
     <!-- END: Page JS-->
     <script>
