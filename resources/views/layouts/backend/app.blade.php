@@ -39,7 +39,7 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/assets/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('icon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/icon.css')}}">
     <!-- END: Custom CSS-->
 
     <script src="{{asset('public/assets/backend/app-assets/vendors/js/vendors.min.js')}}"></script>
@@ -103,6 +103,9 @@
                 <!--<li class="nav-item @php if($menu == 'vechiles') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.vehicles') }}"><i data-feather='truck'></i><span class="menu-title text-truncate" data-i18n="Home">Vehicles</span></a>
                 </li>-->
                 <li class="nav-item @php if($menu == 'clients') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.clients') }}"><i data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Home">Kliendid</span></a>
+                </li>
+
+                <li class="nav-item @php if($menu == 'seaded') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.seaded') }}"><i data-feather='user'></i><span class="menu-title text-truncate" data-i18n="Home">SEADED</span></a>
                 </li>
             </ul>
         </div>

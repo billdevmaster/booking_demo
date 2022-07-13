@@ -87,6 +87,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/admin/clients', 'Backend\AdminClientsController@index')->name('admin.clients');
         Route::get('/admin/clients/get_list', 'Backend\AdminClientsController@get_list');
         // end clients
+
+        // seaded
+        Route::get('/admin/seaded', 'Backend\AdminSeadedController@index')->name('admin.seaded');
+        // end seaded
     });
 });
 
