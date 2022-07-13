@@ -77,7 +77,7 @@ class AdminController extends Controller
             $item['color'] = $colors[$order->type];
             $item['resource'] = "@" . $order->pesubox_id;
             $item['title'] = substr($order->time, 0, 5) . " " . $order->first_name . " " . $order->last_name;
-            $item['notes'] = "nimi: " . $order->first_name . " " . $order->last_name . "\n" . "sünnikuupäev: " . $order->birth_date . "\n" . "telefon: " . $order->phone . "\n" . "meili: " . $order->email . "\n" . "sõnum: " . $order->message;
+            $item['notes'] = "nimi: " . $order->first_name . " " . $order->last_name . "\n" . "telefon: " . $order->phone . "\n" . "meili: " . $order->email . "\n" . "sõnum: " . $order->message;
             $item['notes'] .= "\n" . "teenuseid: ";
             $arr_service = explode(",", $order->service_id);
             foreach($arr_service as $service_id) {
@@ -222,7 +222,7 @@ class AdminController extends Controller
         $order->service_id = $request->service_id;
         $order->duration = $request->duration;
         $order->type = $request->type;
-        $order->birth_date = $request->birth_year . "-" . str_pad($request->birth_month, 2, '0', STR_PAD_LEFT) . "-" . str_pad($request->birth_date, 2, '0', STR_PAD_LEFT);
+        // $order->birth_date = $request->birth_year . "-" . str_pad($request->birth_month, 2, '0', STR_PAD_LEFT) . "-" . str_pad($request->birth_date, 2, '0', STR_PAD_LEFT);
         $order->started_at = $request->datetime;
         $order->date = substr($request->datetime, 0, 10);
         $order->time = substr($request->datetime, 11, 5) . ":00";

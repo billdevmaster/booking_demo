@@ -34,6 +34,7 @@ class AuthController extends Controller
 
     public function signup(Request $request) {
         $register_username = $request->input('register-username');
+        $register_company = $request->input('register-company');
         $register_email = $request->input('register-email');
         $register_password = $request->input('register-password');
         $user = User::where('email', $register_email)->first();
@@ -45,6 +46,7 @@ class AuthController extends Controller
                 ]);
         } else {
             User::create([
+                'company'      => $register_company,
                 'name'      => $register_username,
                 'email'     => $register_email,
                 'password'  => bcrypt($register_password),

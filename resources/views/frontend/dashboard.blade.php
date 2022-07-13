@@ -157,7 +157,7 @@
                         <input name="Bookings[last_name]" class="form-control" placeholder="Perekonnanimi" id="Bookings_last_name" type="text" data-bv-field="Bookings[last_name]">						<small class="help-block" data-bv-validator="notEmpty" data-bv-for="Bookings[last_name]" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a value</small>
                     </div>
                 </div>
-                <div class="form-group  form-group-lg">						
+                {{-- <div class="form-group  form-group-lg">						
                     <div class="col-xs-12 col-md-4">
                     <label class="col-xs-12 col-md-12 control-label text-left " for="Bookings_email">Sünniaasta</label>
                         <select name="Bookings[birthday_year]" class="form-control select2" placeholder="Birthday year"  data-bv-field="Bookings[birthday_year]">
@@ -185,8 +185,7 @@
                         </select>
                         <small class="help-block" data-bv-validator="notEmpty" data-bv-for="Bookings[birthday_date]" data-bv-result="NOT_VALIDATED" style="display: none;">Palun vali sünnikuupäev</small>
                     </div>
-                    {{-- <label class="col-xs-12 col-md-12 control-label text-left hidden-xs hidden-sm" for="Bookings_phone">Telefoni number</label>						 --}}
-                </div>
+                </div> --}}
                 <div class="form-group  form-group-lg">
                     <div class="col-xs-12 col-md-6">
                         <input name="Bookings[email]" class="form-control" placeholder="Email" id="Bookings_email" type="text" data-bv-field="Bookings[email]">						<small class="help-block" data-bv-validator="notEmpty" data-bv-for="Bookings[email]" data-bv-result="NOT_VALIDATED" style="display: none;">Palun sisesta email</small><small class="help-block" data-bv-validator="emailAddress" data-bv-for="Bookings[email]" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a valid email address</small>

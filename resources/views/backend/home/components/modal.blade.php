@@ -122,7 +122,7 @@
                             <option value="light-grey" @if ($order != null && $order->type == "light-grey") selected @endif >Puhkus</option>
                         </select>
                     </div>
-                    <div class="col-md-6 form-group">
+                    {{-- <div class="col-md-6 form-group">
                         
                         <div class="row">
                             <div class="col-md-4">
@@ -150,7 +150,7 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-6 form-group">
                         <label for="start_time">Email</label>
                         <input type="text" class="form-control" name="email" value="@if ($order != null) {{ $order->email }} @endif" />

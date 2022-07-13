@@ -21,6 +21,10 @@
         <form class="auth-register-form mt-2" action="{{ route('backend.signup') }}" method="POST">
             @csrf
             <div class="form-group">
+                <label class="form-label" for="register-company">ettevõtte nimi</label>
+                <input class="form-control" id="register-company" type="text" name="register-company" placeholder="Company" aria-describedby="register-company" autofocus="" tabindex="1" required/>
+            </div>
+            <div class="form-group">
                 <label class="form-label" for="register-username">Kasutajanimi</label>
                 <input class="form-control" id="register-username" type="text" name="register-username" placeholder="johndoe" aria-describedby="register-username" autofocus="" tabindex="1" required/>
             </div>
