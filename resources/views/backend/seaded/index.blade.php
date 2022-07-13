@@ -10,7 +10,7 @@
     <div class="content-body">
         <div class="card mb-4">
             <div class="card-body">
-                <h4 class="card-title">Public Site Url</h4>
+                <h4 class="card-title">Avaliku saidi URL</h4>
                 <p class="card-text" id="public_url">*******************************************</p>
                 <button type="button" class="btn btn-primary waves-effect waves-float waves-light" onclick="copyToClipboard('#public_url')">Copy</button>
             </div>
@@ -18,13 +18,20 @@
 
         <div class="card mb-4 app-user-view">
             <div class="card-body">
-                <h4 class="card-title">User Infomation</h4>
+                <h4 class="card-title">Kasutajateave</h4>
                 <div class="col-xl-12 col-lg-12 mt-2 mt-xl-0">
                     <div class="user-info-wrapper">
                         <div class="d-flex flex-wrap">
                             <div class="user-info-title">
+                                <i data-feather="book" class="mr-1"></i>
+                                <span class="card-text user-info-title font-weight-bold mb-0">ettevõtte nimi</span>
+                            </div>
+                            <p class="card-text mb-0">{{ Auth::user()->company }}</p>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="user-info-title">
                                 <i data-feather="user" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">Kasutajanimi</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->name }}</p>
                         </div>
@@ -38,7 +45,7 @@
                         <div class="d-flex flex-wrap my-50">
                             <div class="user-info-title">
                                 <i data-feather="star" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">Role</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">Roll</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->role == 'A' || Auth::user()->role == 'SA' ? "Admin" : "Client" }}</p>
                         </div>
