@@ -11,38 +11,38 @@
     <meta name="author" content="BOOKid">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>BOOKid- online broneerimissüsteemi</title>
-    <link rel="apple-touch-icon" href="{{asset('public/assets/backed/app-assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/assets/backed/app-assets/images/ico/bookid_logo.png')}}">
+    <link rel="apple-touch-icon" href="{{asset('public/assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/assets/backend/app-assets/images/ico/bookid_logo.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/charts/apexcharts.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/extensions/toastr.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/charts/apexcharts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/extensions/toastr.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
     @yield('page_vendor_css')
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/themes/semi-dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/themes/semi-dark-layout.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
     {{-- <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/dashboard-ecommerce.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/ext-component-toastr.css"> --}}
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backendassets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('icon.css')}}">
     <!-- END: Custom CSS-->
 
-    <script src="{{asset('public/assets/backed/app-assets/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/vendors/js/vendors.min.js')}}"></script>
     
 </head>
 <!-- END: Head-->
@@ -64,7 +64,7 @@
             </div>
             <ul class="nav navbar-nav align-items-center ml-auto">
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}  </span><span class="user-status">Admin</span></div><span class="avatar"> <img class="round" src="{{asset('public/assets/backed/app-assets/images/person-icon.png')}}" alt="avatar" height="40" width="40"></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}  </span><span class="user-status">Admin</span></div><span class="avatar"> <img class="round" src="{{asset('public/assets/backend/app-assets/images/person-icon.png')}}" alt="avatar" height="40" width="40"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
                         <a class="dropdown-item" href="javascript:void(0);"><i class="mr-50" data-feather="user"></i> Profiil</a>
@@ -167,18 +167,18 @@
 
     <!-- BEGIN: Page Vendor JS-->
     @yield('page_vendor_js')
-    <script src="{{asset('public/assets/backed/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
-    <script src="{{asset('public/assets/backed/app-assets/vendors/js/extensions/polyfill.min.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/polyfill.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{asset('public/assets/backed/app-assets/js/core/app-menu.js')}}"></script>
-    <script src="{{asset('public/assets/backed/app-assets/js/core/app.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/js/core/app-menu.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/js/core/app.js')}}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
     @yield('page_js')
-    <script src="{{asset('public/assets/backed/assets/js/scripts.js')}}"></script>
+    <script src="{{asset('public/assets/backendassets/js/scripts.js')}}"></script>
 
     <!-- END: Page JS-->
     <script>

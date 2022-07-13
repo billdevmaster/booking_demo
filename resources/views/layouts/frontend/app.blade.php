@@ -40,7 +40,7 @@
         {{-- <script src="{{asset('public/assets/frontend/lib/jQuery/jQuery-2.1.4.min.js')}}"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('public/assets/frontend/lib/easing/easing.min.js')}}"></script>
-        <script src="{{asset('public/assets/backed/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
+        <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
         <script src="{{asset('public/assets/frontend/lib/timeslots/mark-your-calendar.js')}}"></script>
         <script src="{{asset('public/assets/frontend/lib/momentjs/moment.js')}}"></script> --}}
         <script type="text/javascript" async="" src="{{ asset('public/assets/frontend/js/ga.js') }}"></script>

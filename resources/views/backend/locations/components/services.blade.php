@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/plugins/extensions/ext-component-drag-drop.min.css')}}">
-<script src="{{asset('public/assets/backed/app-assets/vendors/js/extensions/dragula.min.js')}}"></script>
-<script src="{{asset('public/assets/backed/app-assets/js/scripts/extensions/ext-component-drag-drop.min.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/plugins/extensions/ext-component-drag-drop.min.css')}}">
+<script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/dragula.min.js')}}"></script>
+<script src="{{asset('public/assets/backend/app-assets/js/scripts/extensions/ext-component-drag-drop.min.js')}}"></script>
 <input type="hidden" id="location_id" value="{{ $location_id }}">
 <div class="row">
   <div class="col-md-6 services-wrapper" style="padding: 30px 20px">

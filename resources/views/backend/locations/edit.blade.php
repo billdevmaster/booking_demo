@@ -1,11 +1,11 @@
 @extends('layouts.backend.app')
 
 @section('page_vendor_css')
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/css/plugins/forms/form-quill-editor.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/editors/quill/katex.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/editors/quill/monokai-sublime.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/editors/quill/quill.snow.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backed/app-assets/vendors/css/editors/quill/quill.bubble.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/plugins/forms/form-quill-editor.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/editors/quill/katex.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/editors/quill/monokai-sublime.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/editors/quill/quill.snow.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/editors/quill/quill.bubble.css')}}">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 @endsection
 
@@ -73,7 +73,7 @@
 @endsection
 
 @section('page_vendor_js')
-<script src="{{asset('public/assets/backed/app-assets/vendors/js/editors/quill/katex.min.js')}}"></script>
-<script src="{{asset('public/assets/backed/app-assets/vendors/js/editors/quill/highlight.min.js')}}"></script>
-<script src="{{asset('public/assets/backed/app-assets/vendors/js/editors/quill/quill.min.js')}}"></script>
+<script src="{{asset('public/assets/backend/app-assets/vendors/js/editors/quill/katex.min.js')}}"></script>
+<script src="{{asset('public/assets/backend/app-assets/vendors/js/editors/quill/highlight.min.js')}}"></script>
+<script src="{{asset('public/assets/backend/app-assets/vendors/js/editors/quill/quill.min.js')}}"></script>
 @endsection
