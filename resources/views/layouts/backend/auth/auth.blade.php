@@ -10,31 +10,31 @@
     <meta name="keywords" content="broneerimissüsteem, online broneerimine, bookid broneerimine">
     <meta name="author" content="BOOKID">
     <title>BOOKid- Logi sisse online broneerimissüsteemi</title>
-    <link rel="apple-touch-icon" href="{{asset('assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/backend/app-assets/images/ico/bookid_logo.png')}}">
+    <link rel="apple-touch-icon" href="{{asset('public/assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/assets/backend/app-assets/images/ico/bookid_logo.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/vendors/css/vendors.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/themes/bordered-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/themes/semi-dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/themes/bordered-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/themes/semi-dark-layout.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/plugins/forms/form-validation.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/app-assets/css/pages/page-auth.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/plugins/forms/form-validation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/app-assets/css/pages/page-auth.css')}}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/backend/assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/backend/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -58,7 +58,7 @@
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" style="width:60%"src="{{asset('assets/backend/app-assets/images/pages/bookid.png')}}" alt="Login V2" /></div>
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" style="width:60%"src="{{asset('public/assets/backend/app-assets/images/pages/bookid.png')}}" alt="Login V2" /></div>
                         </div>
                         <!-- /Left Text-->
                         @yield('content')
@@ -71,20 +71,20 @@
 
 
     <!-- BEGIN: Vendor JS-->
-    <script src="{{asset('assets/backend/app-assets/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/vendors/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('assets/backend/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{asset('assets/backend/app-assets/js/core/app-menu.js')}}"></script>
-    <script src="{{asset('assets/backend/app-assets/js/core/app.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/js/core/app-menu.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/js/core/app.js')}}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('assets/backend/app-assets/js/scripts/pages/page-auth-login.js')}}"></script>
+    <script src="{{asset('public/assets/backend/app-assets/js/scripts/pages/page-auth-login.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>

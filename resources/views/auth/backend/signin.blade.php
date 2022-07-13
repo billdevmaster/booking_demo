@@ -7,14 +7,20 @@
         @if ($errors->has('fail'))
             <div class="alert alert-danger">
                 <div class="alert-body">
-                    Kasutajat ei leitud.
+                    @if ($errors->has('message'))
+                        @error('message')
+                            {{ $message }}
+                        @enderror
+                    @else
+                        Kasutajat ei leitud.
+                    @endif
                 </div>
             </div>
         @endif
         <form class="auth-login-form mt-2" action="{{ route('backend.signin') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label class="form-label" for="login-email">Email</label>
+                <label class="form-label" for="login-email">Meil</label>
                 <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
             </div>
             <div class="form-group">

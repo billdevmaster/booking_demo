@@ -17,6 +17,13 @@ class AuthController extends Controller
         $login_password = $request->input('login-password');
         $login_remember = $request->input('login-remember');
         if (Auth::attempt(['email' => $login_email, 'password' => $login_password], $login_remember)) {
+            // check if exceed over trial period.
+            $user = User::where('email', $login_email)->first();
+            $now = time();
+            $register_date = strtotime($user->created_at);
+            if (round(($now - $register_date) / 86400) > 30) {
+                return back()->withErrors(["fail" => true, "message" => "Üle prooviperiood 30 päeva"]);    
+            }
             return redirect('/admin');
         } else {
             return back()->withErrors(["fail" => true]);
@@ -41,7 +48,7 @@ class AuthController extends Controller
                 'password'  => bcrypt($register_password),
                 'role'      => 'A',
             ]);
-            return back()->with('status', true);
+            return redirect('/signin');
         }
     }
 
