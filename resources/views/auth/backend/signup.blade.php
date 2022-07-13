@@ -29,7 +29,7 @@
                 <input class="form-control" id="register-username" type="text" name="register-username" placeholder="johndoe" aria-describedby="register-username" autofocus="" tabindex="1" required/>
             </div>
             <div class="form-group">
-                <label class="form-label" for="register-email">Meil</label>
+                <label class="form-label" for="register-email">Email</label>
                 <input class="form-control" id="register-email" type="email" name="register-email" placeholder="john@example.com" aria-describedby="register-email" tabindex="2"  required/>
             </div>
             <div class="form-group">
@@ -47,7 +47,7 @@
             </div>
             <button class="btn btn-primary btn-block" tabindex="5">Registreeri</button>
         </form>
-        <p class="text-center mt-2"><span>On juba konto?</span><a href="{{ route("signin") }}"><span>&nbsp;Selle asemel logige sisse</span></a></p>
+        <p class="text-center mt-2"><span>Oled juba kasutaja?</span><a href="{{ route("signin") }}"><span>&nbsp;Logige sisse</span></a></p>
     </div>
 </div>
 <!-- /Register-->

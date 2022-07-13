@@ -20,7 +20,7 @@
         <form class="auth-login-form mt-2" action="{{ route('backend.signin') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label class="form-label" for="login-email">Meil</label>
+                <label class="form-label" for="login-email">Email</label>
                 <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1" />
             </div>
             <div class="form-group">
