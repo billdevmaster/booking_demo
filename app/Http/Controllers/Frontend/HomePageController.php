@@ -179,6 +179,7 @@ class HomePageController extends Controller
     }
 
     public function getTimeSlots($day_first, $month, $year, $step, $length, $location_id) {
+        ini_set('memory_limit', '64M');
         $location = $this->getCurrentLocation($location_id);
         if ($location == null) {
             return null;
