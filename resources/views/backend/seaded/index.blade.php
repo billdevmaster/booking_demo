@@ -11,7 +11,7 @@
         <div class="card mb-4">
             <div class="card-body">
                 <h4 class="card-title">Avaliku saidi URL</h4>
-                <p class="card-text" id="public_url">*******************************************</p>
+                <p class="card-text" id="public_url">{{ env('APP_URL') }}</p>
                 <button type="button" class="btn btn-primary waves-effect waves-float waves-light" onclick="copyToClipboard('#public_url')">Copy</button>
             </div>
         </div>
