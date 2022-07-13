@@ -54,6 +54,30 @@
                 </div>                
             </div>
         </div>
+
+        <div class="card mb-4 app-user-view">
+            <div class="card-body">
+                <h4 class="card-title">teavitusmeil</h4>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mt-2 mt-xl-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="notification_email" value="{{ Auth::user()->notification_email }}">
+                        </div>
+                    </div>                
+                    <div class="col-xl-4 col-lg-4 mt-2 mt-xl-0">
+                        <button type="button" class="btn btn-primary waves-effect waves-float waves-light mr-2" onclick="saveNotificationEmail()">Save</button>
+                        <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" class="custom-control-input status" id="need_notification"
+                            @if (Auth::user()->need_notification)
+                              checked
+                            @endif onchange="setNeedification()"/>
+                            <label class="custom-control-label" for="need_notification">Notification Setting</label>
+                        </div>
+                    </div>
+                    <input type="hidden" value={{ Auth::user()->id }} id="userid">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -67,6 +91,70 @@
         $temp.remove();
         alert("Your Public Site Url Copied")
     }
+
+    function saveNotificationEmail() {
+        $.ajax({
+        type: "post",
+        url: appUrl + '/admin/seaded/saveNotificationEmail',
+        data: {id: $("#userid").val(), email: $("#notification_email").val()},
+        success: (res) => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Save',
+                text: 'Successfully Done!',
+                customClass: {
+                confirmButton: 'btn btn-primary'
+                },
+                buttonsStyling: false
+            });
+        },
+        error: (err) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            customClass: {
+            confirmButton: 'btn btn-primary'
+            },
+            buttonsStyling: false
+          });
+        }
+      })
+    }
+
+    function setNeedification() {
+        $.ajax({
+        type: "post",
+        url: appUrl + '/admin/seaded/setNeedification',
+        data: {id: $("#userid").val(), needNotification: $("#need_notification").prop("checked")},
+        success: (res) => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Save',
+                text: 'Successfully Done!',
+                customClass: {
+                confirmButton: 'btn btn-primary'
+                },
+                buttonsStyling: false
+            });
+        },
+        error: (err) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            customClass: {
+            confirmButton: 'btn btn-primary'
+            },
+            buttonsStyling: false
+          });
+        }
+      })
+    }
 </script>
 
+@endsection
+
+@section('page_vendor_js')
+<script src="{{asset('public/assets/backend/app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
 @endsection

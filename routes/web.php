@@ -90,6 +90,8 @@ Route::group(['middleware' => 'auth'], function(){
 
         // seaded
         Route::get('/admin/seaded', 'Backend\AdminSeadedController@index')->name('admin.seaded');
+        Route::post('/admin/seaded/saveNotificationEmail', 'Backend\AdminSeadedController@saveNotificationEmail');
+        Route::post('/admin/seaded/setNeedification', 'Backend\AdminSeadedController@setNeedification');
         // end seaded
     });
 });
