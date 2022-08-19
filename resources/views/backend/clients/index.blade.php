@@ -16,7 +16,7 @@
         @include('backend.clients.components.table');
     </div>
 </div>
-@include('backend.services.components.modal')
+@include('backend.clients.components.modal')
 </div>
 @endsection
 

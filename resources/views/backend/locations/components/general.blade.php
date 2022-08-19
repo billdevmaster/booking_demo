@@ -167,9 +167,19 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="defaultInput">Intervall</label>
-        <input class="form-control" type="text" placeholder="Interval" name="interval"  id="interval"  value="{{ $location->interval }}"/>
+    <div class="form-group row">
+        <div class="col-md-4">
+            <label for="defaultInput">Intervall</label>
+            <input class="form-control" type="text" placeholder="Interval" name="interval"  id="interval"  value="{{ $location->interval }}"/>
+        </div>
+        <div class="col-md-4" data-toggle="tooltip" data-placement="top" data-original-title=" Klient saab broneerida puhver aega märgitud viivitusega. Näide: Kui puhver aeg on seadistatud 30 minutit, siis kell 12.01 ei saa klient broneerida enam 12.30 algavat teenuse aega">
+            <label for="defaultInput">Puhver aeg</label>
+            <input class="form-control" type="text" placeholder="buffer" name="buffer"  id="buffer"  value="{{ $location->buffer }}"/>
+        </div>
+        <div class="col-md-4" data-toggle="tooltip" data-placement="top" data-original-title="Märgi päevades, kui kaugele ette saavad kliendid aegu broneerida">
+            <label for="defaultInput">Broneerida päevi ette</label>
+            <input class="form-control" type="text" placeholder="Enabled Days" name="enable_days"  id="enable_days"  value="{{ $location->enable_days }}"/>
+        </div>
     </div>
     <button type="button" class="btn btn-primary mr-1" id="submit">Salvesta</button>
 </form>

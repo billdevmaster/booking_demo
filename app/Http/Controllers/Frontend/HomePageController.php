@@ -11,6 +11,7 @@ use App\Models\LocationPesuboxs;
 use App\Models\Orders;
 use App\Models\Bookings;
 use App\Models\Services;
+use App\Models\Clients;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BookIdMail;
 // use Illuminate\Support\Facades\Input;
@@ -73,6 +74,16 @@ class HomePageController extends Controller
                 return redirect()->route('errorBooking', ["message" => "Your booking time is already booked"]);
             }
             $booking->save();
+
+            // save client
+            $old_client = Clients::where("email", $request['Bookings']['email'])->where("phone", $request['Bookings']['phone'])->first();
+            if ($old_client == null) {
+                $client = new Clients();
+                $client->username = $request['Bookings']['first_name'] . " " . $request['Bookings']['last_name'];
+                $client->email = $request['Bookings']['email'];
+                $client->phone = $request['Bookings']['phone'];
+                $client->save();
+            }
             
             // send email
             $data = array(
@@ -264,7 +275,7 @@ class HomePageController extends Controller
         $date2 = date_create(date('Y-m-d'));
         $diff = (array) date_diff($date1, $date2);
         
-        if ($diff['days'] > 28) {
+        if ($diff['days'] > $location->enable_days) {
             $ret_data['status'] = false;
             return response(json_encode($ret_data));
         }
@@ -272,7 +283,7 @@ class HomePageController extends Controller
         $ret_data['days'] = [];
         $ret_data['office']['allow_brn_max_time'] = '0';
         $ret_data['office']['allow_brn_min_time'] = '1';
-        $ret_data['office']['brn_min_time'] = '240';
+        $ret_data['office']['brn_min_time'] = 60 + $location->buffer;
         $ret_data['office']['slot_length'] = $location->interval;
         $day = [];
         $day['date'] = strtotime($request['start_date']) * 1 - 7200;

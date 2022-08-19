@@ -10,7 +10,9 @@
   const router = {
     getVehicle: appUrl + "/admin/vehicles/get_list",
     getService: appUrl + "/admin/services/get_list",
+    getClients: appUrl + "/admin/clients/get_list",
     removeService: appUrl + "/admin/services/remove",
+    removeClient: appUrl + "/admin/clients/remove",
     getLocation: appUrl + "/admin/locations/get_list",
     editLocation: appUrl + "/admin/locations/edit",
     removeLocation: appUrl + "/admin/locations/delete",
@@ -188,6 +190,113 @@
             url: router.removeService,
             type: 'post',
             data: {id: $("#service_modal #id").val()},
+            success: (res) => {
+              window.location.reload();
+            },
+            error: () => {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                customClass: {
+                  confirmButton: 'btn btn-primary'
+                },
+                buttonsStyling: false
+              });
+            }
+          })
+        }
+      });
+    });
+  }
+
+  var clientsTable = $('#clients_table');
+  if ( clientsTable.length ) {
+    clientsTable.DataTable({
+      processing: true,
+      serverSide: true,
+      language: {
+        sLengthMenu: 'Show _MENU_',
+        search: 'Search',
+        searchPlaceholder: 'Search..',
+        paginate: {
+            // remove previous & next text from pagination
+            previous: '&nbsp;',
+            next: '&nbsp;'
+        }
+      },
+      order:[2,'desc'],
+      ajax: router.getClients,
+      "lengthMenu": [[10, 50, 200, 1000000000], [10, 50, 200, "All"]],
+      "pageLength": 10,
+      columns: [
+        { data: 'id', name: 'id', "visible": false },
+        { data: 'username', name: 'username' },
+        { data: 'email', name: 'email' },
+        { data: 'phone', name: 'phone' },
+      ],
+      columnDefs: [
+        {
+          className: 'control',
+          orderable: false,
+          responsivePriority: 2,
+          targets: 0
+        },
+        {
+          // Actions
+          targets: 4,
+          title: 'Action',
+          orderable: false,
+          render: function (data, type, full, meta) {
+            return (
+              '<div class="btn-group">' +
+                  '<a class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">' +
+                      feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
+                  '</a>' +
+                  '<div class="dropdown-menu dropdown-menu-right">' +
+                      '<a data-toggle="modal" data-target="#client_modal" class="dropdown-item edit-client" >' +
+                      feather.icons['save'].toSvg({ class: 'font-small-4 mr-50' }) +
+                      'Edit</a>' +
+                      '<a class="dropdown-item delete-client" >' +
+                      feather.icons['trash-2'].toSvg({ class: 'font-small-4 mr-50' }) +
+                      'Delete</a>' +
+                  '</div>' +
+              '</div>'
+            );
+          },
+        }
+      ],
+    });
+
+    var serviceData;
+
+    clientsTable.on("click", 'tr', function() {
+      serviceData = clientsTable.DataTable().row(this).data();
+      $("#client_modal #id").val(serviceData.id);
+      $("#client_modal #username").val(serviceData.username);
+      $("#client_modal #email").val(serviceData.email);
+      $("#client_modal #phone").val(serviceData.phone);
+    });
+
+    clientsTable.on("click", "tr .delete-client", function() {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        customClass: {
+          confirmButton: 'btn btn-primary',
+          cancelButton: 'btn btn-outline-danger ml-1'
+        },
+        buttonsStyling: false,
+        
+      }).then(function (result) {
+        if (result.value) {
+          $.ajax({
+            url: router.removeClient,
+            type: 'post',
+            data: {id: $("#client_modal #id").val()},
             success: (res) => {
               window.location.reload();
             },

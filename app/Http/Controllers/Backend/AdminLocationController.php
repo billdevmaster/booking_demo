@@ -74,6 +74,8 @@ class AdminLocationController extends Controller
         $location->address = $request->address;
         $location->street = $request->street;
         $location->city = $request->city;
+        $location->buffer = $request->buffer;
+        $location->enable_days = $request->enable_days;
         $location->save();
         return response(json_encode(['success' => true]));
     }

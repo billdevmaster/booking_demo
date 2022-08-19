@@ -86,6 +86,8 @@ Route::group(['middleware' => 'auth'], function(){
         // clients
         Route::get('/admin/clients', 'Backend\AdminClientsController@index')->name('admin.clients');
         Route::get('/admin/clients/get_list', 'Backend\AdminClientsController@get_list');
+        Route::post('/admin/clients/save', 'Backend\AdminClientsController@save')->name('admin.clients.save');
+        Route::post('/admin/clients/remove', 'Backend\AdminClientsController@remove');
         // end clients
 
         // seaded
