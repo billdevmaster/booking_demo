@@ -30,6 +30,7 @@
 <script>
     $(function() {
         $("#add_new_client").click(function() {
+            $("#client_modal #client_modal_title").text("Lisa uus klient");
             $("#client_modal #id").val(0);
             $("#client_modal #username").val("");
             $("#client_modal #email").val("");

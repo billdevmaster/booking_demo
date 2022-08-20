@@ -53,4 +53,30 @@ class User extends Authenticatable
   
         return false;
     }
+
+    public function check_expired(){
+
+        if (Auth::check()) {
+  
+            $user = Auth::user();
+            if ($user->role == 'SA') {
+                return true;
+            }
+            
+            if ($user->role == 'A') {
+                $now = time();
+                $date_diff = $now - strtotime($user->created_at);
+                $days = round($date_diff / (60 * 60 * 24));
+                if ($days <= 30) {
+                    return true;
+                }
+    
+            }
+  
+            return false;
+  
+        }
+  
+        return false;
+    }
 }

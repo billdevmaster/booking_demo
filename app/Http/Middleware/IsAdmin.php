@@ -22,8 +22,9 @@ class IsAdmin
             $user = Auth::user();
     
             if ($user->is_admin()) {
-    
-                  return $next($request);
+                if ($user->check_expired()) {
+                    return $next($request);
+                }
     
             }
     
