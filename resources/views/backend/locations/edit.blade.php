@@ -46,9 +46,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" id="pesubox-tab" data-toggle="tab" href="#pesubox" aria-controls="pesubox" role="tab" aria-selected="false">Töötajad</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" aria-controls="user" role="tab" aria-selected="false">Kasutajad</a>
-                                </li>
+                                </li> --}}
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="general" aria-labelledby="general-tab" role="tabpanel">
