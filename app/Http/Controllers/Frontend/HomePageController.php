@@ -115,7 +115,7 @@ class HomePageController extends Controller
             }
             // end send email
 
-            return redirect()->route('index', ["office" => $request->location_id]);
+            return view("frontend.redirect");
         }
         $location_list = Locations::where("is_delete", "N")->get();
         $locations = Locations::where("is_delete", "N")->first();
