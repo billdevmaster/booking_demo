@@ -119,6 +119,11 @@ class HomePageController extends Controller
         }
         $location_list = Locations::where("is_delete", "N")->get();
         $locations = Locations::where("is_delete", "N")->first();
+        
+        if (!$locations) {
+            $location = null;
+            return view("frontend.dashboard", compact("location"));
+        }
         $location_id = $request->office ? $request->office : $locations->id;
         $location = $this->getCurrentLocation($location_id);
         $location_services = $this->getLocationServices($location_id);

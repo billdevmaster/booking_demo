@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocationPesuboxsTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateLocationPesuboxsTable extends Migration
      */
     public function up()
     {
-        Schema::create('location_pesuboxs', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->integer("location_id");
-            $table->string("name")->nullable();
-            $table->string("description")->nullable();
-            $table->integer("status")->default(0);
+            $table->string('username')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->char("is_delete")->default("N");
-            $table->integer("display_order")->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateLocationPesuboxsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('location_pesuboxs');
+        Schema::dropIfExists('clients');
     }
 }

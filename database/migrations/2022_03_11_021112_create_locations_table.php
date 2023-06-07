@@ -36,6 +36,8 @@ class CreateLocationsTable extends Migration
             $table->string("street")->nullable();
             $table->string("city")->nullable();
             $table->char("is_delete")->default("N");
+            $table->integer("buffer")->nullable();
+            $table->integer("enable_days")->nullable();
             $table->timestamps();
         });
     }

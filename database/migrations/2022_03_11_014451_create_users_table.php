@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('role')->nullable();
             $table->rememberToken();
+            $table->string('company')->nullable();
+            $table->string('notification_email')->nullable();
+            $table->integer('need_notification')->default(0);
             $table->timestamps();
         });
     }
