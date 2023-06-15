@@ -42,7 +42,7 @@ class verifyApp
             $con = mysqli_connect('localhost', $db_user, $db_password) or die('Error connecting to MySQL server: ' . mysql_error());
             // Select database
             mysqli_select_db($con, $db) or die('Error selecting MySQL database: ' . mysql_error());
-            $query = "SELECT * FROM apps WHERE url='https://bookid.ee/test' and deleted_at IS null"; // . $app_url;
+            $query = "SELECT * FROM apps WHERE url='" . $app_url . "' and deleted_at IS null"; // . $app_url;
             $result = mysqli_query($con, $query);
             $app_id = 0;
             while($obj = $result->fetch_object()){

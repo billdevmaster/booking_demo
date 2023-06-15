@@ -20,7 +20,7 @@ class AdminSubscribeController extends Controller
                 array_push($plans, $obj);
             }
 
-            $query = "SELECT * FROM apps WHERE url='https://bookid.ee/test' AND deleted_at IS NULL";
+            $query = "SELECT * FROM apps WHERE url='" . $mysql['app_url'] . "' AND deleted_at IS NULL";
             $result = mysqli_query($mysql['con'], $query);
             while($obj = $result->fetch_object()){
                 $app = $obj;
@@ -91,6 +91,6 @@ class AdminSubscribeController extends Controller
             $con = null;
         }
 
-        return ["con" => $con, "app_url" => 'https://bookid.ee/test'];
+        return ["con" => $con, "app_url" => $app_url];
     }
 }
