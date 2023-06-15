@@ -107,6 +107,9 @@
 
                 <li class="nav-item @php if($menu == 'seaded') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.seaded') }}"><i data-feather='user'></i><span class="menu-title text-truncate" data-i18n="Home">SEADED</span></a>
                 </li>
+
+                <li class="nav-item @php if($menu == 'subscribe') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.subscribe') }}"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate" data-i18n="Home">Subscribe</span></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -172,6 +175,7 @@
     @yield('page_vendor_js')
     <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/polyfill.min.js')}}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
