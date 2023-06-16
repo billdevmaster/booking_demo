@@ -10,8 +10,8 @@
     <div class="col-12">
       <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Subscribe</h4>
-            <p>End Date: {{ $app_plans ? $app_plans->end_date : 'Not Subscribed' }}</p>
+            <h4 class="card-title">Telli</h4>
+            <p>Lõppkuupäev: {{ $app_plans ? $app_plans->end_date : 'Not Subscribed' }}</p>
             <div class="row">
               @foreach ($plans as $plan)
                 <div class="col-12 col-md-4">
@@ -28,7 +28,7 @@
                               </div>
                               <small class="annual-pricing d-none text-muted"></small>
                           </div>
-                          <a href="subscribe/checkout?id={{ $plan->id }}" class="btn btn-block btn-outline-success mt-2">Subscribe</a>
+                          <a href="subscribe/checkout?id={{ $plan->id }}" class="btn btn-block btn-outline-success mt-2">Telli</a>
                       </div>
                   </div>
                 </div>

@@ -108,7 +108,7 @@
                 <li class="nav-item @php if($menu == 'seaded') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.seaded') }}"><i data-feather='user'></i><span class="menu-title text-truncate" data-i18n="Home">SEADED</span></a>
                 </li>
 
-                <li class="nav-item @php if($menu == 'subscribe') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.subscribe') }}"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate" data-i18n="Home">Subscribe</span></a>
+                <li class="nav-item @php if($menu == 'subscribe') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.subscribe') }}"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate" data-i18n="Home">Telli</span></a>
                 </li>
             </ul>
         </div>
