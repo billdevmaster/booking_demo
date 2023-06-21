@@ -56,13 +56,28 @@
               </div>
                 <!-- Checkout Place Order Right ends -->
             </div>
-            <form id="payment-form"> 
+            {{-- <form id="payment-form"> 
               <div id="card-element"></div>
               <button class="btn btn-primary mt-1 btn-block btn-next place-order" type="submit">Telli</button>
-            </form>
+            </form> --}}
+
+            <section>
+              <div class="product">
+                <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+                <div class="description">
+                  <h3>Stubborn Attachments</h3>
+                  <h5>$20.00</h5>
+                </div>
+              </div>
+              <form action="http://localhost/booking/booking_demo/admin/subscribe/pay" method="POST">
+                <button type="submit" id="checkout-button">Checkout</button>
+              </form>
+            </section>
           </div>
       </div>
     </div>
   </div>
 </div>
 @endsection
+
+

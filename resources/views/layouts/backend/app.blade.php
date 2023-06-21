@@ -165,7 +165,6 @@
 
     <script>
         var appUrl = "{{ env("APP_URL") }}";
-        console.log("app_url", appUrl)
     </script>
 
     <!-- BEGIN: Vendor JS-->
@@ -177,7 +176,6 @@
     @yield('page_vendor_js')
     <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('public/assets/backend/app-assets/vendors/js/extensions/polyfill.min.js')}}"></script>
-    <script src="https://js.stripe.com/v3/"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->

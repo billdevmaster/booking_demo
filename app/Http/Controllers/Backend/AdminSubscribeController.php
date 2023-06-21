@@ -7,59 +7,31 @@ use Illuminate\Http\Request;
 
 class AdminSubscribeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $message = $request->input('error');
+        $content = file_get_contents(env('SAAS_URL') . "/api/subscribe/get_subscriptions");
+        $plans = json_decode($content, true);
         $mysql = $this->get_mysql_connection();
-        $plans = [];
         $app = null;
-        $app_plans = null;
+        $app_subscription = null;
         if ($mysql['con'] != null) {
-            $query = "SELECT * FROM plans WHERE deleted_at IS null";
-            $result = mysqli_query($mysql['con'], $query);
-            while($obj = $result->fetch_object()){
-                array_push($plans, $obj);
-            }
-
             $query = "SELECT * FROM apps WHERE url='" . $mysql['app_url'] . "' AND deleted_at IS NULL";
             $result = mysqli_query($mysql['con'], $query);
             while($obj = $result->fetch_object()){
                 $app = $obj;
             }
             if ($app) {
-                $query = "SELECT * FROM app_plans WHERE app_id=" . $app->id . " ORDER BY end_date DESC limit 1";
+                $query = "SELECT * FROM app_subscription WHERE app_id=" . $app->id . " AND (status='Trialing' OR status='Active') AND deleted_at IS NULL limit 1";
                 $result = mysqli_query($mysql['con'], $query);
                 while($obj = $result->fetch_object()){
-                    $app_plans = $obj;
+                    $app_subscription = $obj;
                 }
             }
             mysqli_close($mysql['con']);
         }
         $menu = "subscribe";
-        return view('backend.subscribe.index', compact("menu", "plans", "app_plans"));
-    }
-
-    public function checkout(Request $request)
-    {
-        $id = $request->id;
-        $mysql = $this->get_mysql_connection();
-        $app_url = $mysql['app_url'];
-        $plan = null;
-        $app = null;
-        if ($mysql['con'] != null) {
-            $query = "SELECT * FROM plans WHERE id=" . $id;
-            $result = mysqli_query($mysql['con'], $query);
-            while($obj = $result->fetch_object()){
-                $plan = $obj;
-            }
-            $query = "SELECT * FROM apps WHERE url='" . $app_url . "' AND deleted_at IS NULL";
-            $result = mysqli_query($mysql['con'], $query);
-            while($obj = $result->fetch_object()){
-                $app = $obj;
-            }
-            mysqli_close($mysql['con']);
-        }
-        $menu = "subscribe";
-        return view('backend.subscribe.checkout', compact("menu", "plan", "app"));
+        return view('backend.subscribe.index', compact("menu", "plans", "app_subscription", "message"));
     }
 
     private function get_mysql_connection() {

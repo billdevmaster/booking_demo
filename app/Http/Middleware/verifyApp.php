@@ -49,7 +49,7 @@ class verifyApp
                 $app_id = $obj->id;
             }
             if ($app_id > 0) {
-                $query = "SELECT * FROM  app_plans WHERE app_id=" . $app_id . " AND end_date>='" . date("Y-m-d") . "'";
+                $query = "SELECT * FROM app_subscription WHERE app_id=" . $app_id . " AND (status='Trialing' OR status='Active') AND deleted_at IS NULL limit 1";
                 $result = mysqli_query($con, $query);
                 $allowed = false;
                 while($obj = $result->fetch_object()){

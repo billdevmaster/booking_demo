@@ -100,7 +100,7 @@ Route::group(['middleware' => 'auth'], function(){
 
         // subscribe
         Route::get('/admin/subscribe', 'Backend\AdminSubscribeController@index')->name('admin.subscribe');
-        Route::get('/admin/subscribe/checkout', 'Backend\AdminSubscribeController@checkout')->name('admin.subscribe.checkout');
+        Route::get('/admin/subscribe_success', 'Backend\AdminSubscribeController@subscribe_success')->name('admin.subscribe.success');
     });
 });
 
