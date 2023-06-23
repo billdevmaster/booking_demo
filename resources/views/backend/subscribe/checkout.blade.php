@@ -14,7 +14,7 @@
     <div class="col-12">
       <div class="card">
           <div class="card-body ecommerce-application" id="subscription">
-            <h4 class="card-title">Telli</h4>
+            <h4 class="card-title">Arveldamine</h4>
             <input type="hidden" id="app_id" value="{{ $app->id }}" />
             <input type="hidden" id="plan_id" value="{{ $plan->id }}" />
             <input type="hidden" id="payment_url" value="{{ env('SAAS_URL') }}" />
@@ -56,10 +56,6 @@
               </div>
                 <!-- Checkout Place Order Right ends -->
             </div>
-            {{-- <form id="payment-form"> 
-              <div id="card-element"></div>
-              <button class="btn btn-primary mt-1 btn-block btn-next place-order" type="submit">Telli</button>
-            </form> --}}
 
             <section>
               <div class="product">
@@ -70,7 +66,7 @@
                 </div>
               </div>
               <form action="http://localhost/booking/booking_demo/admin/subscribe/pay" method="POST">
-                <button type="submit" id="checkout-button">Checkout</button>
+                <button type="submit" id="checkout-button">Arveldamine</button>
               </form>
             </section>
           </div>

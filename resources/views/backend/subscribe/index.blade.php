@@ -17,7 +17,7 @@
     <div class="col-12">
       <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Telli</h4>
+            <h4 class="card-title">Arveldamine</h4>
             <div class="row">
               @foreach ($plans as $plan)
                 <div class="col-12 col-md-4">
@@ -47,7 +47,7 @@
                             <!-- Add a hidden field with the lookup_key of your Price -->
                             <input type="hidden" name="customer_id" value="{{ $app_subscription->customer_id }}" />
                             <input type="hidden" name="app_url" value="{{ env('APP_URL') }}" />
-                            <button id="checkout-and-portal-button" class="btn btn-block btn-warning mt-2" type="submit">Edit</button>
+                            <button id="checkout-and-portal-button" class="btn btn-block btn-warning mt-2" type="submit">Muuda</button>
                           </form>  
                           @else
                           </div>
@@ -55,7 +55,7 @@
                             <!-- Add a hidden field with the lookup_key of your Price -->
                             <input type="hidden" name="price_id" value="{{ $plan['id'] }}" />
                             <input type="hidden" name="domain" value="{{ env('APP_URL') }}" />
-                            <button id="checkout-and-portal-button" class="btn btn-block btn-outline-success mt-2" type="submit">Checkout</button>
+                            <button id="checkout-and-portal-button" class="btn btn-block btn-outline-success mt-2" type="submit">Arveldamine</button>
                           </form>
                           @endif
                       </div>
