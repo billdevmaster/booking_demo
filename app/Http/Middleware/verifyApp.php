@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use DateTime;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -45,19 +46,31 @@ class verifyApp
             $query = "SELECT * FROM apps WHERE url='" . $app_url . "' and deleted_at IS null"; // . $app_url;
             $result = mysqli_query($con, $query);
             $app_id = 0;
+            $app_created_at = "";
             while($obj = $result->fetch_object()){
                 $app_id = $obj->id;
+                $app_created_at = $obj->created_at;
             }
             if ($app_id > 0) {
-                $query = "SELECT * FROM app_subscription WHERE app_id=" . $app_id . " AND (status='Trialing' OR status='Active') AND deleted_at IS NULL limit 1";
-                $result = mysqli_query($con, $query);
-                $allowed = false;
-                while($obj = $result->fetch_object()){
-                    $allowed = true;
-                }
-                if (!$allowed) {
-                    echo "<h1>This app is not allowed</h1>";
-                    exit();
+                // Create a DateTime object with the start date
+                $date = new DateTime($app_created_at);
+
+                // Add 30 days to the date
+                $date->modify('+30 days');
+
+                // Get the date after 30 days
+                $endDate = $date->format('Y-m-d');
+                if (date("Y-m-d") > $date) {
+                    $query = "SELECT * FROM app_subscription WHERE app_id=" . $app_id . " AND (status='Trialing' OR status='Active') AND deleted_at IS NULL limit 1";
+                    $result = mysqli_query($con, $query);
+                    $allowed = false;
+                    while($obj = $result->fetch_object()){
+                        $allowed = true;
+                    }
+                    if (!$allowed) {
+                        echo "<h1>This app is not allowed</h1>";
+                        exit();
+                    }
                 }
             }
         }
