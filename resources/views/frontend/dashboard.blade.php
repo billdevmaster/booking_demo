@@ -93,7 +93,7 @@
                                     </li>
                                     @endforeach
                                 </ul>
-                                <h3>Lisainfo</h3>
+                                {{-- <h3>Lisainfo</h3>
                                 <ul>
                                     @foreach ($location_pesuboxs as $pesubox)
                                         <li>
@@ -101,7 +101,7 @@
                                             <p>&nbsp;&nbsp;{{ $pesubox->description }}</p>
                                         </li>
                                     @endforeach
-                                </ul>
+                                </ul> --}}
                             </div>
                         </nav>
                         <div class="hidden">
