@@ -15,7 +15,7 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Osakonnad</h2>
+                    <h2 class="content-header-title float-left mb-0">{{__('sidebar.departments')}}</h2>
                     <!--<div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a>
@@ -38,17 +38,14 @@
                         <div class="card-body">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" aria-controls="general" role="tab" aria-selected="true">Seaded</a>
+                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" aria-controls="general" role="tab" aria-selected="true">{{__('sidebar.settings')}}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" aria-controls="services" role="tab" aria-selected="false">Teenused</a>
+                                    <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" aria-controls="services" role="tab" aria-selected="false">{{__('sidebar.services')}}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pesubox-tab" data-toggle="tab" href="#pesubox" aria-controls="pesubox" role="tab" aria-selected="false">Töötajad</a>
+                                    <a class="nav-link" id="pesubox-tab" data-toggle="tab" href="#pesubox" aria-controls="pesubox" role="tab" aria-selected="false">{{__('admin.employees')}}</a>
                                 </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" aria-controls="user" role="tab" aria-selected="false">Kasutajad</a>
-                                </li> --}}
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="general" aria-labelledby="general-tab" role="tabpanel">

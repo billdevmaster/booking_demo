@@ -38,7 +38,7 @@
 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel18">Lisa uus broneering</h4>
+            <h4 class="modal-title" id="myModalLabel18">{{__('admin.add_new_reservation')}}</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -54,19 +54,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <label for="start_time">Algus</label>
+                        <label for="start_time">{{__('admin.beginning')}}</label>
                         <input type="text" id="start_time" class="form-control flatpickr-date-time" placeholder="YYYY-MM-DD HH:MM" value='@if ($order != null)
                             {{ $order->date . " " . $order->time }}
                         @endif' name="datetime" />
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="end_time">Lõpp</label>
+                        <label for="end_time">{{__('admin.end')}}</label>
                         <input type="text" id="end_time" class="form-control flatpickr-date-time" placeholder="YYYY-MM-DD HH:MM" value='@if ($order != null)
                             {{ $end_time }}
                         @endif' name="enddatetime" disabled/>
                     </div>
                     <div class="col-md-12 form-group" id="duration">
-                        <label for="start_time">Kestvus</label>
+                        <label for="start_time">{{__('admin.durability')}}</label>
                         <div class="flex">
                             <button type="button" class="btn btn-default item @if($order != null && $order->duration == 30) selected @endif" data-value="{{ $interval }}">{{ $interval }}M</button>
                             <button type="button" class="btn btn-default item @if($order != null && $order->duration == 60) selected @endif" data-value="{{ 2 * $interval }}">{{ 2 * $interval }}M</button>
@@ -82,8 +82,8 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <button type="button" class="btn btn-round" id="services">Teenused</button>
-                                <p class="text-left" style="margin-top: 10px">Valitud teenused</p>
+                                <button type="button" class="btn btn-round" id="services">{{__('sidebar.services')}}</button>
+                                <p class="text-left" style="margin-top: 10px">{{__('admin.selected_services')}}</p>
                                 <ul class='list-group text-left' style="margin-bottom: 20px" id="order_services">
                                     @foreach ($order_services as $service)
                                         <li class="list-group-item draggable" data-id="{{ $service->id }}"><span class="handle mr-50">+</span>{{ $service->name }}</li>
@@ -92,8 +92,8 @@
                             </div>
                             
                             <div class="col-md-6 text-center">
-                                <button type="button" class="btn btn-round" id="pesuboxs">Töötaja</button>
-                                <p class="text-left" style="margin-top: 10px">Valitud töötaja</p>
+                                <button type="button" class="btn btn-round" id="pesuboxs">{{__('admin.employee')}}</button>
+                                <p class="text-left" style="margin-top: 10px">{{__('adminselected_employee')}}</p>
                                 <ul class='list-group text-left' style="margin-bottom: 20px">
                                     @foreach ($location_pesuboxs as $pesubox)
                                         @if ($order != null && $order->pesubox_id == $pesubox->id)
@@ -105,21 +105,21 @@
                         </div>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="start_time">Eesnimi</label>
+                        <label for="start_time">{{__('messages.first_name')}}</label>
                         <input type="text" class="form-control" name="first_name" value="@if ($order != null) {{ $order->first_name }} @endif" />
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="start_time">Perekonnanimi</label>
+                        <label for="start_time">{{__('messages.sur_name')}}</label>
                         <input type="text" class="form-control" name="last_name" value="@if ($order != null) {{ $order->last_name }} @endif" />
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="start_time">Tüüp</label>
+                        <label for="start_time">{{__('admin.type')}}</label>
                         <select class="form-control mb-1" id="icon" name="type">
-                            <option value="red" @if ($order != null && $order->type == "red") selected @endif >Telefon</option>
-                            <option value="green" @if ($order != null && $order->type == "green") selected @endif >Kohal korduv</option>
+                            <option value="red" @if ($order != null && $order->type == "red") selected @endif >{{__('messages.telephone')}}</option>
+                            <option value="green" @if ($order != null && $order->type == "green") selected @endif >{{__('admin.present_recurring')}}</option>
                             <option value="yellow" @if ($order != null && $order->type == "yellow") selected @endif >Online</option>
-                            <option value="blue" @if ($order != null && $order->type == "blue") selected @endif >Kohal esmane</option>
-                            <option value="light-grey" @if ($order != null && $order->type == "light-grey") selected @endif >Puhkus</option>
+                            <option value="blue" @if ($order != null && $order->type == "blue") selected @endif >{{__('admin.present_primary')}}</option>
+                            <option value="light-grey" @if ($order != null && $order->type == "light-grey") selected @endif >{{__('admin.vocation')}}</option>
                         </select>
                     </div>
                     {{-- <div class="col-md-6 form-group">
@@ -156,22 +156,22 @@
                         <input type="text" class="form-control" name="email" value="@if ($order != null) {{ $order->email }} @endif" />
                     </div>
                     <div class="col-md-6 form-group">
-                        <label for="start_time">Telefon</label>
+                        <label for="start_time">{{__('messages.telephone')}}</label>
                         <input type="text" class="form-control" name="phone" value="@if ($order != null) {{ $order->phone }} @endif" />
                     </div>
                     
                     <div class="col-md-12 form-group">
-                        <label for="start_time">Lisainfo</label>
+                        <label for="start_time">{{__('messages.additional_information')}}</label>
                         <textarea type="text" class="form-control" name="message">@if ($order != null) {{ $order->message }} @endif</textarea>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" id="submit" class="btn btn-primary">Salvesta</button>
+                <button type="button" id="submit" class="btn btn-primary">{{__('admin.save')}}</button>
                 @if ($order != null)
-                <button type="button" id="delete" class="btn btn-red text-white" data-id="{{ $order->id }}">Kustuta</button>
+                <button type="button" id="delete" class="btn btn-red text-white" data-id="{{ $order->id }}">{{__('admin.delete')}}</button>
                 @endif
-                <button type="button" class="btn btn-success text-white" data-dismiss="modal">Tühista</button>
+                <button type="button" class="btn btn-success text-white" data-dismiss="modal">{{__('admin.cancel')}}</button>
             </div>
         </form>
     </div>
@@ -180,7 +180,7 @@
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Vali teenused</h4>
+                <h4 class="modal-title">{{__('admin.select_services')}}</h4>
                 <button type="button" class="close" onclick="closeServiceModal()">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -201,7 +201,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="closeServiceModal()">Salvesta</button>
+                <button type="button" class="btn btn-primary" onclick="closeServiceModal()">{{__('admin.save')}}</button>
             </div>
         </div>
     </div>
@@ -211,7 +211,7 @@
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Vali Töötaja</h4>
+                <h4 class="modal-title">{{__('admin.select_employee')}}</h4>
                 <button type="button" class="close" onclick="closePesuboxModal()">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -241,7 +241,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">Salvesta</button>
+                <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">{{__(admin.save)}}</button>
             </div>
         </div>
     </div>

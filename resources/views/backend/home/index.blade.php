@@ -65,7 +65,7 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Töölaud</h2>
+                    <h2 class="content-header-title float-left mb-0">{{__('sidebar.desktop')}}</h2>
                     <!--<div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Order</a>
@@ -82,7 +82,7 @@
                 <div class="col-md-3">
                     <div class="form-group row">
                         <div class="col-md-3 col-form-label">
-                            <label for="location">Osakonnad</label>
+                            <label for="location">{{__('sidebar.departments')}}</label>
                         </div>
                         <div class="col-md-9">
                             <select class="form-control select2" id="location">
@@ -95,16 +95,16 @@
                 </div>
                 <div class="col-md-3 row">
                     <div class="col-xs-8 col-md-8">
-                        <input type="text" style="margin-bottom:10px" class="form-control" id="search_input" placeholder="Otsi nime järgi...." value="{{ $search_input }}">
+                        <input type="text" style="margin-bottom:10px" class="form-control" id="search_input" placeholder="{{__('admin.search_by_name')}}" value="{{ $search_input }}">
                     </div>
                     <div class="col-xs-4 col-md-4">
-                        <button type="button" style="margin-bottom:10px" class="btn btn-primary" id="search">Otsi</button>
+                        <button type="button" style="margin-bottom:10px" class="btn btn-primary" id="search">{{__('admin.search')}}</button>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group row">
                         <div class="col-md-3 col-form-label">
-                            <label for="location">kuupäev</label>
+                            <label for="location">{{__('admin.the_date')}}</label>
                         </div>
                         <div class="col-md-9">
                             <input type="text" style="margin-bottom:10px" class="form-control date" value="{{ $date }}" id="date">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-primary" onclick="getOrder(0)">Lisa broneering</button>
+                    <button type="button" class="btn btn-primary" onclick="getOrder(0)">{{__('admin.add_reservation')}}</button>
                 </div>
             </div>
         </form>

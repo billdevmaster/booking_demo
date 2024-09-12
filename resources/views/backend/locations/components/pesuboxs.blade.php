@@ -2,18 +2,18 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Osakonna töötajad</h4>
-        <button class="btn btn-primary waves-effect waves-float waves-light" data-toggle="modal" data-target="#edit_pesubox_modal" onclick="addNewPesubox()">Lisa töötaja</button>
+        <h4 class="card-title">{{__('admin.employees_department')}}</h4>
+        <button class="btn btn-primary waves-effect waves-float waves-light" data-toggle="modal" data-target="#edit_pesubox_modal" onclick="addNewPesubox()">{{__('admin.add_an_employee')}}</button>
       </div>
       <div class="table-responsive">
         <table class="table table-hover" id="location_pesubox_table">
             <thead>
               <tr>
-                <th>Nimi</th>
-                <th>Kirjeldus</th>
-                <th>Staatus</th>
-                <th>kuvamise järjekord</th>
-                <th>Tegevused</th>
+                <th>{{__('admin.name')}}</th>
+                <th>{{__('admin.description')}}</th>
+                <th>{{__('admin.status')}}</th>
+                <th>{{__('admin.display_order')}}</th>
+                <th>{{__('admin.activities')}}</th>
               </tr>
             </thead>
             <tbody>
@@ -43,11 +43,11 @@
                       <div class="dropdown-menu">
                         <a class="dropdown-item edit-pesubox" href="javascript:void(0);" data-toggle="modal" data-target="#edit_pesubox_modal" data-id="{{ $location_pesubox->id }}">
                           <i data-feather="edit-2" class="mr-50"></i>
-                          <span>Muuda</span>
+                          <span>{{__('admin.change')}}</span>
                         </a>
                         <a class="dropdown-item" href="javascript:void(0);" onclick="deletePesubox({{ $location_pesubox->id }})">
                           <i data-feather="trash" class="mr-50"></i>
-                          <span>Kustuta</span>
+                          <span>{{__('admin.delete')}}</span>
                         </a>
                       </div>
                     </div>
@@ -64,7 +64,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h4 class="modal-title" id="myModalLabel18">Lisa uus töötaja</h4>
+              <h4 class="modal-title" id="myModalLabel18">{{__('admin.add_new_employee')}}</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -75,25 +75,25 @@
               <input type="hidden" name="location_id" id="location_id" value="{{ $location_id }}">
               <div class="modal-body">
                   <div class="form-group">
-                      <label for="defaultInput">Nimi</label>
-                      <input class="form-control" type="text" placeholder="Nimi" name="name"  id="name"/>
+                      <label for="defaultInput">{{__('admin.name')}}</label>
+                      <input class="form-control" type="text" placeholder="{{__('admin.name')}}" name="name"  id="name"/>
                   </div>
               </div>
               <div class="modal-body">
                 <div class="form-group">
-                    <label for="defaultInput">Kirjeldus</label>
-                    <textarea class="form-control" type="text" placeholder="Kirjeldus" name="description"  id="description"></textarea>
+                    <label for="defaultInput">{{__('admin.description')}}</label>
+                    <textarea class="form-control" type="text" placeholder="{{__('admin.description')}}" name="description"  id="description"></textarea>
                 </div>
               </div>
               <div class="modal-body">
                 <div class="form-group">
-                    <label for="defaultInput">kuvamise järjekord</label>
+                    <label for="defaultInput">{{__('admin.display_order')}}</label>
                     <input class="form-control" type="text" placeholder="input number" name="display_order" id="display_order">
                 </div>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" id="save_location_pesubox">Salvesta</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Kustuta</button>
+                  <button type="button" class="btn btn-primary" id="save_location_pesubox">{{__('admin.save')}}</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">{{__('admin.delete')}}</button>
               </div>
           </form>
       </div>

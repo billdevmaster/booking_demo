@@ -26,7 +26,7 @@ Route::post('/backend/signup', 'Auth\Backend\AuthController@signup')->name('back
 Route::get('/backend/signout', 'Auth\Backend\AuthController@signout')->name('backend.signout');
 
 // frontend
-Route::group(['middleware' => 'verify.app'], function(){
+// Route::group(['middleware' => 'verify.app'], function(){
     Route::get('/', 'Frontend\HomePageController@index')->name('index');
     Route::post('/', 'Frontend\HomePageController@index')->name('order');
     Route::get('/home/getCalendar', 'Frontend\HomePageController@getCalendar')->name('home.getCalendar');
@@ -35,7 +35,7 @@ Route::group(['middleware' => 'verify.app'], function(){
     Route::get('/errorBooking', 'Frontend\HomePageController@errorBooking')->name('errorBooking');
     Route::get('/cancelBooking', 'Frontend\HomePageController@cancelBookingView')->name('cancelBookingView');
     Route::post('/cancelBooking', 'Frontend\HomePageController@cancelBooking')->name('cancelBooking');
-});
+// });
 
 // backend
 Route::group(['middleware' => 'auth'], function(){

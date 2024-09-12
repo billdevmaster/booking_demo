@@ -1,20 +1,16 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'enter_bookid' => 'Enter BOOKid administration!',
+    "user_not_found" => "User not found.",
+    "password" => "Password",
+    "sign_in" => "Sign In",
+    "dont_have_account" => "Don't have an account yet?",
+    "create_account" => "Create an account",
+    "register_as_user" => "Register as a user",
+    "registered_successfully" => "Successfully registered.",
+    "company_name" => "Company name",
+    "username" => "Username",
+    "register" => "Register",
+    "already_user" => "You are already a user"
 ];

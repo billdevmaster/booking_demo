@@ -18,7 +18,7 @@
     </ul>
   </div>
   <div class="col-md-6">
-    <p>Muuda lohistades teenuste järjekorda</p>
+    <p>{{__('admin.change_service_order')}}</p>
     <ul class="list-group text-left" style="margin-bottom: 20px" id="location_services">
       @foreach ($location_service_array as $service)
       <li class="list-group-item draggable" data-service_id="{{ $service['id'] }}">
@@ -27,7 +27,7 @@
       @endforeach
     </ul>
     <div class="form-group">
-      <button class="btn btn-primary" onclick="saveOrders()">Salvesta</button>
+      <button class="btn btn-primary" onclick="saveOrders()">{{__('admin.save')}}</button>
     </div>
   </div>
 </div>

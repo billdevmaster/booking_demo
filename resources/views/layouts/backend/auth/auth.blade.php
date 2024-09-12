@@ -9,7 +9,7 @@
     <meta name="description" content="BOOKid broneerimissüsteem. Lihtne ja soodne online broneerimine.">
     <meta name="keywords" content="broneerimissüsteem, online broneerimine, bookid broneerimine">
     <meta name="author" content="BOOKID">
-    <title>BOOKid- Logi sisse online broneerimissüsteemi</title>
+    <title>{{__('messages.site_auth_title')}}</title>
     <link rel="apple-touch-icon" href="{{asset('public/assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/assets/backend/app-assets/images/ico/bookid_logo.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">

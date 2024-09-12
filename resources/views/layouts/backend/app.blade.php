@@ -10,7 +10,7 @@
     <meta name="keywords" content="broneerimissüsteem, online broneerimine, broneeringud, teenuste broneerimine, aja broneerimine">
     <meta name="author" content="BOOKid">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>BOOKid- online broneerimissüsteemi</title>
+    <title>{{__('messages.site_admin_title')}}</title>
     <link rel="apple-touch-icon" href="{{asset('public/assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/assets/backend/app-assets/images/ico/bookid_logo.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -67,9 +67,9 @@
                         <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">{{ Auth::user()->name }}  </span><span class="user-status">Admin</span></div><span class="avatar"> <img class="round" src="{{asset('public/assets/backend/app-assets/images/person-icon.png')}}" alt="avatar" height="40" width="40"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="mr-50" data-feather="user"></i> Profiil</a>
+                        <!-- <a class="dropdown-item" href="javascript:void(0);"><i class="mr-50" data-feather="user"></i> Profiil</a> -->
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('backend.signout') }}"><i class="mr-50" data-feather="power"></i> Logi välja</a>
+                        <a class="dropdown-item" href="{{ route('backend.signout') }}"><i class="mr-50" data-feather="power"></i> {{__('sidebar.sign_out')}}</a>
                     </div>
                 </li>
             </ul>
@@ -93,23 +93,23 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="nav-item @php if($menu == 'home') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">Töölaud</span></a>
+                <li class="nav-item @php if($menu == 'home') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">{{__('sidebar.desktop')}}</span></a>
                 </li>
                 {{-- <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Management Items</span><i data-feather="more-horizontal"></i> --}}
-                <li class="nav-item @php if($menu == 'locations') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.locations') }}"><i data-feather='map-pin'></i><span class="menu-title text-truncate" data-i18n="Home">Osakonnad</span></a>
+                <li class="nav-item @php if($menu == 'locations') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.locations') }}"><i data-feather='map-pin'></i><span class="menu-title text-truncate" data-i18n="Home">{{__('sidebar.departments')}}</span></a>
                 </li>
-                <li class="nav-item @php if($menu == 'services') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.services') }}"><i data-feather='activity'></i><span class="menu-title text-truncate" data-i18n="Home">Teenused</span></a>
+                <li class="nav-item @php if($menu == 'services') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.services') }}"><i data-feather='activity'></i><span class="menu-title text-truncate" data-i18n="Home">{{__('sidebar.services')}}</span></a>
                 </li>
                 <!--<li class="nav-item @php if($menu == 'vechiles') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.vehicles') }}"><i data-feather='truck'></i><span class="menu-title text-truncate" data-i18n="Home">Vehicles</span></a>
                 </li>-->
-                <li class="nav-item @php if($menu == 'clients') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.clients') }}"><i data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Home">Kliendid</span></a>
+                <li class="nav-item @php if($menu == 'clients') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.clients') }}"><i data-feather='list'></i><span class="menu-title text-truncate" data-i18n="Home">{{__('sidebar.customers')}}</span></a>
                 </li>
 
-                <li class="nav-item @php if($menu == 'seaded') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.seaded') }}"><i data-feather='user'></i><span class="menu-title text-truncate" data-i18n="Home">SEADED</span></a>
+                <li class="nav-item @php if($menu == 'seaded') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.seaded') }}"><i data-feather='user'></i><span class="menu-title text-truncate" data-i18n="Home">{{__('sidebar.settings')}}</span></a>
                 </li>
 
-                <li class="nav-item @php if($menu == 'subscribe') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.subscribe') }}"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate" data-i18n="Home">Arveldamine</span></a>
-                </li>
+                <!-- <li class="nav-item @php if($menu == 'subscribe') echo 'active' @endphp"><a class="d-flex align-items-center" href="{{ route('admin.subscribe') }}"><i data-feather='dollar-sign'></i><span class="menu-title text-truncate" data-i18n="Home">Arveldamine</span></a>
+                </li> -->
             </ul>
         </div>
     </div>

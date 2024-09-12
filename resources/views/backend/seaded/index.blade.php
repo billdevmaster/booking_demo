@@ -10,42 +10,42 @@
     <div class="content-body">
         <div class="card mb-4">
             <div class="card-body">
-                <h4 class="card-title">Avaliku saidi URL</h4>
+                <h4 class="card-title">{{__('admin.public_site_url')}}</h4>
                 <p class="card-text" id="public_url">{{ env('APP_URL') }}</p>
-                <button type="button" class="btn btn-primary waves-effect waves-float waves-light" onclick="copyToClipboard('#public_url')">Kopeeri</button>
+                <button type="button" class="btn btn-primary waves-effect waves-float waves-light" onclick="copyToClipboard('#public_url')">{{__('admin.copy')}}</button>
             </div>
         </div>
 
         <div class="card mb-4 app-user-view">
             <div class="card-body">
-                <h4 class="card-title">Kasutajateave</h4>
+                <h4 class="card-title">{{__('admin.user_information')}}</h4>
                 <div class="col-xl-12 col-lg-12 mt-2 mt-xl-0">
                     <div class="user-info-wrapper">
                         <div class="d-flex flex-wrap">
                             <div class="user-info-title mr-50">
                                 <i data-feather="book" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">ettevõtte nimi</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">{{__('admin.company_name')}}</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->company }}</p>
                         </div>
                         <div class="d-flex flex-wrap my-50">
                             <div class="user-info-title mr-50">
                                 <i data-feather="user" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">Kasutajanimi</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">{{__('auth.username')}}</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->name }}</p>
                         </div>
                         <div class="d-flex flex-wrap my-50">
                             <div class="user-info-title mr-50">
                                 <i data-feather="mail" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">Email</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">{{__('admin.email')}}</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->email }}</p>
                         </div>
                         <div class="d-flex flex-wrap my-50">
                             <div class="user-info-title mr-50">
                                 <i data-feather="star" class="mr-1"></i>
-                                <span class="card-text user-info-title font-weight-bold mb-0">Roll</span>
+                                <span class="card-text user-info-title font-weight-bold mb-0">{{__('admin.role')}}</span>
                             </div>
                             <p class="card-text mb-0">{{ Auth::user()->role == 'A' || Auth::user()->role == 'SA' ? "Admin" : "Client" }}</p>
                         </div>
@@ -57,7 +57,7 @@
 
         <div class="card mb-4 app-user-view">
             <div class="card-body">
-                <h4 class="card-title">Uue broneeringu teavituse email</h4>
+                <h4 class="card-title">{{__('admin.notify_email')}}</h4>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 mt-2 mt-xl-0">
                         <div class="form-group">
@@ -65,13 +65,13 @@
                         </div>
                     </div>                
                     <div class="col-xl-8 col-lg-8 mt-2 mt-xl-0">
-                        <button type="button" class="btn btn-primary waves-effect waves-float waves-light mr-2" onclick="saveNotificationEmail()">Salvesta</button>
+                        <button type="button" class="btn btn-primary waves-effect waves-float waves-light mr-2" onclick="saveNotificationEmail()">{{__('admin.save')}}</button>
                         <div class="custom-control custom-switch custom-control-inline">
                             <input type="checkbox" class="custom-control-input status" id="need_notification"
                             @if (Auth::user()->need_notification)
                               checked
                             @endif onchange="setNeedification()"/>
-                            <label class="custom-control-label" for="need_notification">Lülita teavitus sisse</label>
+                            <label class="custom-control-label" for="need_notification">{{__('admin.turn_on_notify')}}</label>
                         </div>
                     </div>
                     <input type="hidden" value={{ Auth::user()->id }} id="userid">
