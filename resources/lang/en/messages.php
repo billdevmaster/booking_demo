@@ -23,5 +23,14 @@ return [
     "thank_you" => "Thank you!",
     "confirmed_reservation" => "Your reservation is confirmed",
     "will_send_confirm_email" => "We will send the reservation confirmation to the entered email address",
-    "return_home" => "Return home"
+    "return_home" => "Return home",
+    "hello" => "Hello",
+    "have_booked_service" => "You have booked a service",
+    "booking_time" => "Booking time",
+    "selected_services" => "Selected services",
+    "notes" => "Notes",
+    "cancel1" => "If you find that you cannot attend at the booked time, then",
+    "cancel2" => "the easiest way to cancel the booking is by clicking the following",
+    "link" => "link"
+
 ];

@@ -16,12 +16,13 @@
 		</div>
 	</div>
     <div class="row">
-        @foreach ($location_list as $location)
+        @foreach ($location_list as $location_item)
         
-                <a class="btn btn-primary {{ $location->id == $location_id ? 'active' : '' }}" href="{{ route('index') }}?office={{ $location->id }}">{{ $location->name }}</a>
-          
+        <a class="btn btn-primary {{ $location_item->id == $location_id ? 'active' : '' }}" href="{{ route('index') }}?office={{ $location_item->id }}">{{ $location_item->name }}</a>
+        
         @endforeach
     </div>
+    <p class="">{{ $location->address }} {{ $location->street }} {{ $location->city }}</p>
 	<div class="row">
 		<div class="col-xs-12 col-md-12 navTabsHolder hidden-xs hidden-sm">
 			<ul class="nav nav-tabs" role="tablist">

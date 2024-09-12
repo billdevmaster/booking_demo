@@ -136,7 +136,6 @@ class HomePageController extends Controller
         //     'start' => strtotime("today"),
         //     'end' => strtotime("+6 day", strtotime("today")),
         // );
-
         return view("frontend.dashboard", compact("office", "location", "location_services", "location_pesuboxs", "location_id", "location_list"));
     }
 

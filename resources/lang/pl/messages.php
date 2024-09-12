@@ -23,6 +23,14 @@ return [
     "thank_you" => "Dziękujemy!",
     "confirmed_reservation" => "Twoja rezerwacja została potwierdzona",
     "will_send_confirm_email" => "Wyślemy potwierdzenie rezerwacji na podany adres e-mail",
-    "return_home" => "Powrót do domu"
+    "return_home" => "Powrót do domu",
+    "hello" => "Cześć",
+    "have_booked_service" => "Zarezerwowałeś usługę",
+    "booking_time" => "Czas rezerwacji",
+    "selected_services" => "Wybrane usługi",
+    "notes" => "Notatki",
+    "cancel1" => "Jeśli okaże się, że nie możesz się pojawić o zarezerwowanym czasie,",
+    "cancel2" => "najwygodniej będzie anulować rezerwację, klikając następujący",
+    "link" => "link"
 
 ];
