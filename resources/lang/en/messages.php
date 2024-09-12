@@ -19,5 +19,9 @@ return [
     "book_appointment" => "Book an appointment",
     "site_auth_title" => "BOOKid- Log in to the online booking system",
     "site_admin_title" => "BOOKid - online booking system",
-    "site_title" => "BOOKid-online booking"
+    "site_title" => "BOOKid-online booking",
+    "thank_you" => "Thank you!",
+    "confirmed_reservation" => "Your reservation is confirmed",
+    "will_send_confirm_email" => "We will send the reservation confirmation to the entered email address",
+    "return_home" => "Return home"
 ];

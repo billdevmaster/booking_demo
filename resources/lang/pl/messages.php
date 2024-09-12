@@ -19,5 +19,10 @@ return [
     "book_appointment" => "Zarezerwuj wizytę",
     "site_auth_title" => "BOOKid- Zaloguj się do systemu rezerwacji online",
     "site_admin_title" => "BOOKid - system rezerwacji on-line",
-    "site_title" => "KSIĄŻKI - rezerwacja online"
+    "site_title" => "KSIĄŻKI - rezerwacja online",
+    "thank_you" => "Dziękujemy!",
+    "confirmed_reservation" => "Twoja rezerwacja została potwierdzona",
+    "will_send_confirm_email" => "Wyślemy potwierdzenie rezerwacji na podany adres e-mail",
+    "return_home" => "Powrót do domu"
+
 ];

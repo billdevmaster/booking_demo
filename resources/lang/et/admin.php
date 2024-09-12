@@ -57,5 +57,5 @@ return [
     "company_name" => "ettevõtte nimi",
     "role" => "Roll",
     "notify_email" => "Uue broneeringu teavituse email",
-    "turn_on_notify" => "Lülita teavitus sisse"
+    "turn_on_notify" => "Lülita teavitus sisse",
 ];
