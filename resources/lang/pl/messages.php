@@ -31,6 +31,7 @@ return [
     "notes" => "Notatki",
     "cancel1" => "Jeśli okaże się, że nie możesz się pojawić o zarezerwowanym czasie,",
     "cancel2" => "najwygodniej będzie anulować rezerwację, klikając następujący",
-    "link" => "link"
+    "link" => "link",
+    "department_address" => "Adres wydziału"
 
 ];

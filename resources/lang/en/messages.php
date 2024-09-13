@@ -31,6 +31,7 @@ return [
     "notes" => "Notes",
     "cancel1" => "If you find that you cannot attend at the booked time, then",
     "cancel2" => "the easiest way to cancel the booking is by clicking the following",
-    "link" => "link"
+    "link" => "link",
+    "department_address" => "Department Address"
 
 ];

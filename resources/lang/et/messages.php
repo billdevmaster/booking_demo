@@ -24,7 +24,6 @@ return [
     "confirmed_reservation" => "Sinu broneering on kinnitatud",
     "will_send_confirm_email" => "Broneeringu kinnituse saadame sisestatud e-maili aadressile",
     "return_home" => "Tagasi koju",
-
     "hello" => "Tere",
     "have_booked_service" => "Olete broneerinud teenuse",
     "booking_time" => "Broneerimise aeg",
@@ -32,5 +31,6 @@ return [
     "notes" => "Märkused",
     "cancel1" => "Kui leiate, et Te ei saa broneeritud ajal kohale ilmuda, siis",
     "cancel2" => "on kõige mugavam broneering tühistada klikkides järgnevat",
-    "link" => "linki"
+    "link" => "linki",
+    "department_address" => "Osakonna aadress"
 ];

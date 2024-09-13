@@ -10,6 +10,7 @@
     <h2 style="border-bottom: 1px solid">{{ $data['location_name'] }}</h2>
     <p>{{__('messages.hello')}}.</p><br/>
     <p>{{__('messages.have_booked_service')}}: {{ $data['location_name'] }}</p><br/>
+    <p>{{__('messages.department_address')}}: {{ $data['location_address'] }}</p><br/>
     <p>{{__('messages.booking_time')}}: {{ $data['time'] }}</p>
     <p>{{__('messages.selected_services')}}: {{ $data['service_name'] }}</p>
     <p>
