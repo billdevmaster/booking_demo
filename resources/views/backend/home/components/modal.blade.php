@@ -241,7 +241,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">{{__(admin.save)}}</button>
+                <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">{{__('admin.save')}}</button>
             </div>
         </div>
     </div>
